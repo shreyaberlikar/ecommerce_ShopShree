@@ -1,6 +1,3 @@
-Certainly! Below is an example README for an eCommerce website called Shopshree:
-
----
 
 # Shopshree - Women's Shopping Website
 
