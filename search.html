@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+ 
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" integrity="sha512-PgQMlq+nqFLV4ylk1gwUOgm6CtIIXkKwaIHp/PAIWHzig/lKZSEGKEysh0TCVbHJXCLN7WetD8TFecIky75ZfQ==" crossorigin="anonymous">
+</head>
+<body>
+<!-- ==============search section ends here============== -->
+<section class="search_section py-5 my-5" id="search_section">
+    <div class="container">
+        <div class="title text-center mb-5">
+            <h2><i class="far fa-file mr-2"></i>Search</h2>
+        </div>
+        <div class="row">
+            <!-- BEGIN RESULT -->
+            <div class="col-md-10 mx-auto">
+                <!-- BEGIN SEARCH INPUT -->
+                <div class="input-group">
+                    <input type="text" class="form-control" id="searchInput" placeholder="Search Products">
+                    <span class="input-group-btn">
+                        <button class="btn btn-primary" type="button" onclick="searchProducts()"><i class="fa fa-search"></i></button>
+                    </span>
+                </div>
+                <!-- END SEARCH INPUT -->
+                <small>Showing all results matching <span id="searchQuery"></span></small>
+                <!-- BEGIN TABLE RESULT -->
+                <div class="table-responsive mt-3">
+                    <table class="table table-hover">
+                        <tbody id="searchResults" class="border-bottom">
+                            <!-- Search results will be displayed here -->
+                        </tbody>
+                    </table>
+                </div>
+                <!-- END TABLE RESULT -->
+            </div>
+            <!-- END RESULT -->
+        </div>
+    </div>
+</section>
+<!-- ==============search section ends here============== -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" 
+integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" 
+integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+<script>
+    function searchProducts() {
+        var searchQuery = document.getElementById('searchInput').value;
+        document.getElementById('searchQuery').textContent = '"' + searchQuery + '"';
+        // You can implement logic here to search the products and update the table accordingly
+        // For demonstration purposes, I'll simply display a sample result
+        var searchResults = document.getElementById('searchResults');
+        searchResults.innerHTML = `
+            <tr>
+                <td class="number text-center">1</td>
+                <td class="image"><img src="cat1kurti2.jpg" width="100px" class="img img-fluid" alt=""></td>
+                <td class="product"><strong>Kurti</strong><br></td>
+                <td class="rate text-right"><span><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half-o"></i></span></td>
+                <td class="price text-right">₹350</td>
+            </tr>
+            <tr>
+                <td class="number text-center">2</td>
+                <td class="image"><img src="cat3flat.jpg" width="100px" class="img img-fluid" alt=""></td>
+                <td class="product"><strong>Footwear</strong><br></td>
+                <td class="rate text-right"><span><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half-o"></i></span></td>
+                <td class="price text-right">₹300</td>
+            </tr>
+            <tr>
+                <td class="number text-center">3</td>
+                <td class="image"><img src="cat2lipstick.webp" width="100px" class="img img-fluid" alt=""></td>
+                <td class="product"><strong>Lipstick</strong><br></td>
+                <td class="rate text-right"><span><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half-o"></i></span></td>
+                <td class="price text-right">₹150</td>
+            </tr>
+        `;
+    }
+</script>
+</body>
+</html>

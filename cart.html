@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" integrity="sha512-PgQMlq+nqFLV4ylk1gwUOgm6CtIIXkKwaIHp/PAIWHzig/lKZSEGKEysh0TCVbHJXCLN7WetD8TFecIky75ZfQ==" crossorigin="anonymous">
+    <style>
+        .product-card {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            border: 1px solid #ccc;
+            margin-bottom: 10px;
+        }
+        .product-card img {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            margin-right: 20px;
+        }
+        .product-details {
+            flex: 1;
+        }
+        .summary-card {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            border: 1px solid #ccc;
+            margin-bottom: 10px;
+        }
+        .summary-card-details {
+            flex: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Cart Details</h2>
+        <div class="product-card">
+            <img id="cart-image" src="" alt="Product Image">
+            <div class="product-details">
+                <p>Product Name: <span id="cart-name"></span></p>
+                <p>Quantity: <span id="cart-quantity"></span></p>
+                <p>Price: <span id="cart-price"></span></p>
+            </div>
+        </div>
+
+        <h2>Summary</h2>
+        <div class="summary-card">
+            <div class="summary-card-details">
+                <p>Total Price: <span id="total-price"></span></p>
+                <p>Shipping: Free</p>
+            </div>
+            <button type="button" class="btn btn-primary" id="place-order-btn">Place Order</button>
+
+        </div>
+    </div>
+
+    <script>
+        // JavaScript code to retrieve values from localStorage and display them
+        var cartImageSrc = localStorage.getItem("cartImageSrc");
+        var cartQuantity = localStorage.getItem("cartQuantity");
+        var cartName = localStorage.getItem("cartName");
+        var cartPrice = localStorage.getItem("cartPrice");
+        
+        // Display these values in the HTML
+        document.getElementById("cart-name").innerText = cartName;
+        document.getElementById("cart-image").src = cartImageSrc;
+        document.getElementById("cart-quantity").innerText = cartQuantity;
+        document.getElementById("cart-price").innerText = cartPrice;
+
+        // JavaScript code to retrieve total price from product price element
+        var totalPriceElement = document.getElementById("product-price");
+        var totalPrice = totalPriceElement ? totalPriceElement.innerText : cartPrice;
+
+        // Display total price in the HTML
+        document.getElementById("total-price").innerText = "₹" + totalPrice;
+    </script>
+    <script>
+        // Add event listener to the "Place Order" button
+        document.getElementById("place-order-btn").addEventListener("click", function() {
+            // Redirect to checkout.html
+            window.location.href = "checkout.html";
+        });
+    </script>
+</body>
+</html>
