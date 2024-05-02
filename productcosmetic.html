@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products details Page</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+ 
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" integrity="sha512-PgQMlq+nqFLV4ylk1gwUOgm6CtIIXkKwaIHp/PAIWHzig/lKZSEGKEysh0TCVbHJXCLN7WetD8TFecIky75ZfQ==" crossorigin="anonymous">
+
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <section class="image-section">
+                    <img id="product-image" src="cat2cosmetic.jpg" alt="Saree Image" class="img-fluid">
+                </section>
+            </div>
+            <div class="col-md-6">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="title mb-4">
+                            <h3 id="product-name">Cosmetic</h3>
+                        </div>
+                        <div class="category mb-4">
+                            <span class="bg-light-gray p-2"><a href="category2.html">Braclet</a></span>
+                        </div>
+                        <div class="rating d-flex text-danger mb-4">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <i class="far fa-star"></i>
+                        </div>
+                        <div class="price mb-4">
+                            <b><span class="mr-1">₹</span><span id="product-price-value">1400</span></b>
+                            <!-- Hidden input to store price -->
+                            <input type="hidden" id="product-price" value="1400">
+                        </div>
+                        <div class="desc">
+                            <p>Name : Cosmetic 16 Compartment Lipstick Stand Holder Makeup Organiser Holder for Nail Polish Kajal Brush Slot Transparent Multipurpose
+                                <br>
+                                Brand : AA COLLECTION
+                                <br>
+                                Color : Transparent
+                                <br>
+                                Size : Travel Packs
+                                <br>
+                                Net Quantity (N) : 1
+                                <br>
+                                Country of Origin : India</p>
+                        </div>
+                        <div class="qty_section border-top pt-2 mb-4">
+                            <label>Quantity</label>
+                            <div>
+                                <div class="mb-0 w-100">
+                                    <input id="product-quantity" class="quantity text-center" min="0" max="10" name="quantity" value="1" type="number">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="buy">
+                            <a href="#" id="add-to-cart-btn" class="btn btn-primary shadow">Add to Cart</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Bootstrap JS, jQuery, Popper.js -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+    <script>
+        // JavaScript code to handle the "Add to Cart" button click event
+        document.getElementById("add-to-cart-btn").addEventListener("click", function(event) {
+            // Prevent the default action of the anchor tag
+            event.preventDefault();
+            
+            // Get the values of the image source, quantity, name, and price
+            var imageSrc = document.getElementById("product-image").src;
+            var quantity = document.getElementById("product-quantity").value;
+            var name = document.getElementById("product-name").innerText;
+            var price = document.getElementById("product-price").value;
+            
+            // Store these values in localStorage
+            localStorage.setItem("cartImageSrc", imageSrc);
+            localStorage.setItem("cartQuantity", quantity);
+            localStorage.setItem("cartName", name);
+            localStorage.setItem("cartPrice", price);
+            
+            // Redirect to the cart.html page
+            window.location.href = "cart.html";
+        });
+    </script>
+</body>
+</html>
