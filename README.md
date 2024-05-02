@@ -29,7 +29,7 @@ To run the website locally, follow these steps:
 
 1. Clone the repository: `git clone <repository-url>`
 2. Open the project folder in your preferred code editor.
-3. Open the `homepage.html` file in a web browser to view the website.
+3. Open the `index.html` file in a web browser to view the website.
 
 ## Usage
 
