@@ -146,7 +146,7 @@
         </div>
         <!-- Submit button -->
         <div class="text-center">
-            <button type="submit" class="btn btn-primary">
+            <button type="button" onclick="submitForm()" class="btn btn-primary">
                 <i class="fa fa-check mr-2"></i>Buy
             </button>
         </div>
@@ -169,20 +169,8 @@
     document.getElementById("cart-quantity").innerText = cartQuantity;
     document.getElementById("cart-price").innerText = cartPrice;
 
-    // JavaScript code to retrieve total price from product price element
-    var totalPriceElement = document.getElementById("product-price");
-    var totalPrice = totalPriceElement ? totalPriceElement.innerText : cartPrice;
-
-    // Display total price in the HTML
-    document.getElementById("total-price").innerText = "₹" + totalPrice;
-
-    // Function to redirect to the next page after successful form submission
-    function redirectToConfirmationPage() {
-        window.location.href = "order_confirmation.html";
-    }
-
     // Function to validate form before submission
-    function submitForm(event) {
+    function submitForm() {
         var isValid = true;
         var inputs = document.querySelectorAll('input[required], select[required], textarea[required]');
         inputs.forEach(function(input) {
@@ -193,10 +181,8 @@
                 input.classList.remove('is-invalid');
             }
         });
-        if (!isValid) {
-            event.preventDefault(); // Prevent form submission if not valid
-        } else {
-            redirectToConfirmationPage(); // Redirect to confirmation page if form is valid
+        if (isValid) {
+            document.getElementById("orderForm").submit(); // Submit the form if valid
         }
     }
 </script>
