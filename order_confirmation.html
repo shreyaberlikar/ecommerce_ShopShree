@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Confirmation</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+ 
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" integrity="sha512-PgQMlq+nqFLV4ylk1gwUOgm6CtIIXkKwaIHp/PAIWHzig/lKZSEGKEysh0TCVbHJXCLN7WetD8TFecIky75ZfQ==" crossorigin="anonymous">
+    <style>
+        body {
+            background-image: url('https://www.transparenttextures.com/patterns/60-lines.png'); /* Textured background */
+            background-color: #e0e0e0; /* Light gray background color */
+        }
+        
+        .order-confirmation-box {
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.1); /* Shadow effect */
+            margin-bottom: 20px; /* Add some space between boxes */
+            background-color: #f0f0f0; /* Faint shade background color */
+        }
+
+        .product-box {
+            background-color: #ffffff; /* White background color for product box */
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Shadow effect */
+        }
+
+        .summary-card {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            border: 1px solid #ccc;
+            margin-bottom: 10px;
+        }
+
+        .summary-card-details {
+            flex: 1;
+        }
+
+        .summary-card img {
+            width: 100px; /* Increased width for the product image */
+            height: 100px; /* Increased height for the product image */
+            object-fit: cover;
+            margin-right: 20px;
+        }
+
+        .animated-text {
+            animation: bounce 2s infinite; /* Animation effect */
+            font-size: 1.5rem; /* Decreased font size */
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-10px); /* Adjust the bounce height as needed */
+            }
+            60% {
+                transform: translateY(-5px); /* Adjust the bounce height as needed */
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- ==============Order Confirmation Starts Here============== -->
+    <section class="order_confirmation py-5 my-5" id="order_confirmation">
+        <div class="container">
+            <div class="section_title text-center mb-5">
+                <h1 class="text-capitalize text-primary">Order Confirmation</h1> <!-- Blue color for the title -->
+            </div>
+            <div class="row">
+                <!-- Product Details Column -->
+                <div class="col-md-6">
+                    <!-- Product Box -->
+                    <section class="product-box py-3">
+                        <div class="container">
+                            <div class="summary-card">
+                                <img id="cart-image" src="" alt="Product Image">
+                                <div class="summary-card-details">
+                                    <p>Product Name: <span id="cart-name"></span></p>
+                                    <p>Quantity: <span id="cart-quantity"></span></p>
+                                    <p>Price: <span id="cart-price"></span></p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <!-- End of Product Box -->
+                </div>
+                <!-- End of Product Details Column -->
+                
+                <!-- Order Details Column -->
+                <div class="col-md-6">
+                    <!-- Order Confirmation Box -->
+                    <div class="order-confirmation-box">
+                        <h2 class="text-success">Thank you for your purchase!</h2> <!-- Green color for the success message -->
+                        <!-- Displaying customer name and address -->
+                        <h6>Your Order has been confirmed Successfully...!!!</h6>
+                        <h6><span class="mr-2">Order No:</span><span><b>123123123123</b></span></h6>
+                        <h6><span class="mr-2">Order Status:</span><span><b><span class="badge badge-danger">We are getting your order ready to be shipped!</span></b></span></h6>
+                    </div>
+                    <!-- End of Order Confirmation Box -->
+                </div>
+                <!-- End of Order Details Column -->
+            </div>
+        </div>
+    </section>
+    <!-- ==============Order Confirmation Ends Here============== -->
+
+    <!-- Animated Text -->
+    <div class="container text-center mt-5">
+        <p class="animated-text h3"><strong>Happy Shopping!! 🛍️ Go Girls 🎉</strong></p>
+    </div>
+    <!-- End of Animated Text -->
+
+    <!-- Return to Homepage Button -->
+    <div class="container text-center mt-3">
+        <a href="index.html" class="btn btn-primary">Return to Homepage</a>
+    </div>
+    <!-- End of Return to Homepage Button -->
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" 
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" 
+    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+    <!-- JavaScript to retrieve customer name and address and update the HTML -->
+    <script>
+        // JavaScript code to retrieve values from localStorage and display them
+        var cartImageSrc = localStorage.getItem("cartImageSrc");
+        var cartQuantity = localStorage.getItem("cartQuantity");
+        var cartName = localStorage.getItem("cartName");
+        var cartPrice = localStorage.getItem("cartPrice");
+        
+        // Display these values in the HTML
+        document.getElementById("cart-name").innerText = cartName;
+        document.getElementById("cart-image").src = cartImageSrc;
+        document.getElementById("cart-quantity").innerText = cartQuantity;
+        document.getElementById("cart-price").innerText = cartPrice;
+    </script>
+</body>
+</html>
