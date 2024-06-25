@@ -49,6 +49,3 @@ To run the website locally, follow these steps:
    - Fill in the required information and complete the purchase process.
 
 
-
-
-Feel free to adjust the content and structure of this README to better suit your project's specific details and requirements!
